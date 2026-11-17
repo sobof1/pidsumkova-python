@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telemetry-tool"
+version = "1.0.0"
+description = "Аналіз журналу телеметрії сенсорів мережі моніторингу"
+requires-python = ">=3.11"
+authors = [{ name = "Студент" }]
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+telemetry-tool = "telemetry_tool.cli:main"
+
+[tool.setuptools]
+packages = ["telemetry_tool"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "D"]
+ignore = ["D203", "D213"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
+
+[tool.ruff.format]
+quote-style = "double"
